@@ -1,16 +1,13 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
-import Navigation from './routerComponent/Navigation';
-import Content from './routerComponent/Content';
 
-function App() {
-  return (
-    <div className="App">
-      <Navigation/>
-      <Content/>
-    </div>
-  );
+function App(props: {children: boolean | React.ReactChild | React.ReactFragment | React.ReactPortal | null | undefined;}) {
+	return (
+		<div className="App">
+			{console.log(props.children)}
+			{props.children}
+		</div>
+	);
 }
 
 export default App;
