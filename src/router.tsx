@@ -15,6 +15,7 @@ const Router = () => {
 						<Admin>
 							<Switch>
 								<Route path="/home" component={Home}/>
+								<Route path="/form/component" component={Home}/>
 							</Switch>
 						</Admin>
 					} />
