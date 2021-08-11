@@ -4,6 +4,7 @@ import React from 'react';
 import Login from './component/login/Login';
 import Admin from './Admin';
 import Home from './component/Home';
+import FormPage from './component/formComponent/formPage';
 
 const Router = () => {
 	return (
@@ -15,7 +16,7 @@ const Router = () => {
 						<Admin>
 							<Switch>
 								<Route path="/home" component={Home}/>
-								<Route path="/form/component" component={Home}/>
+								<Route path="/form/component" component={FormPage}/>
 							</Switch>
 						</Admin>
 					} />
