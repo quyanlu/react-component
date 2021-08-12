@@ -2,11 +2,12 @@ import React from 'react';
 import './style.scss';
 
 function Message(props) {
-	const {status, message, required, name, value} = props;
+	console.log(props)
+	const {status, message, required, name, value,label} = props;
 	let showMessage = '';
 	let color = '#FFFFFF';
 	if (required && !value && status === 'reject') {
-		showMessage = `${name} 为必填项`;
+		showMessage = `${label} 为必填项`;
 		color = 'red';
 	} else if (status === 'reject') {
 		showMessage = message;

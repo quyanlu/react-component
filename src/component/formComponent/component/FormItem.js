@@ -6,8 +6,7 @@ import Message from './Message';
 function FormItem(props) {
 	const {name, children, label, height = 50, labelWidth, required = false, rules = {}, trigger = 'onChange', validateTrigger = 'onChange'} = props;
 	const formInstance = useContext(FormContext);
-	console.log(formInstance, 'formInstance');
-	const { registerValidateFields , dispatch , unRegisterValidate } = formInstance
+	const {registerValidateFields, dispatch, unRegisterValidate} = formInstance;
 	const [, forceUpdate] = useState({});
 	const onStoreChange = useMemo(() => {
 		//管理层改变 =》 通知表单项
@@ -31,7 +30,6 @@ function FormItem(props) {
 	//使表单控件变成可控组件
 	const getControlled = (child) => {
 		const mergeChildrenProps = {...child.props};
-		console.log(mergeChildrenProps, "mergeChildrenPropsmergeChildrenPropsmergeChildrenProps");
 		if (!name) return mergeChildrenProps;
 		//改变表单单元项的值
 		const handleChange = (e) => {
@@ -59,7 +57,6 @@ function FormItem(props) {
 	} else {
 		renderChildren = children;
 	}
-
 	return (
 		<Label
 			height={height}
@@ -68,8 +65,8 @@ function FormItem(props) {
 			required={required}
 		>
 			{renderChildren}
-			<Message name={name} {...dispatch({type: 'getFieldModel'}, name)} />
+			<Message name={name} label={label} {...dispatch({type: 'getFieldModel'}, name)} />
 		</Label>
 	);
 }
-export default memo(FormItem)
+export default memo(FormItem);

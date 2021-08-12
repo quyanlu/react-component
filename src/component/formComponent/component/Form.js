@@ -4,7 +4,6 @@ import FormContext from './FormContext';
 
 function Form(props, ref) {
 	const {form, onFinish, onFinishFailed, initialValues, children} = props;
-	console.log(props)
 	//创建form状态管理实例
 	const formInstance = useForm(form, initialValues);
 	//抽离属性 -> 抽离dispatch | setCallback 这两个方法不能对外提供

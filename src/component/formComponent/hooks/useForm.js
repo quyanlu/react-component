@@ -149,6 +149,13 @@ class FormStore {
 		return model ? model : {};
 	}
 
+	//获取对应字段名得值
+	getFieldValue(name) {
+		const model = this.model[name];
+		if (!model && this.defaultFormValue[name]) return this.defaultFormValue[name]; //没有注册但是存在默认值的情况
+		return model ? model.value : null;
+	}
+
 	//单一表单单元项验证
 	validateFieldValue(name, forceUpdate = false) {
 
