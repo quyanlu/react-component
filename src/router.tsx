@@ -7,6 +7,8 @@ import Home from './component/Home';
 import FormPage from './component/formComponent/formPage';
 import DetailReport from './component/tableComponent/DetailReport';
 import PropsFormPage from './component/porpsForm/formPage';
+import GrandFather from './component/refComponent/跨层级获取';
+import HOCRef from './component/refComponent/高阶组件转发REF';
 
 const Router = () => {
 	return (
@@ -17,10 +19,12 @@ const Router = () => {
 					<Route path="/" render={() =>
 						<Admin>
 							<Switch>
-								<Route path="/home" component={Home}/>
-								<Route path="/form/component" component={FormPage}/>
-								<Route path="/form/reg" component={PropsFormPage}/>
-								<Route path="/table/high" component={DetailReport}/>
+								<Route path="/home" component={Home} />
+								<Route path="/form/component" component={FormPage} />
+								<Route path="/form/reg" component={PropsFormPage} />
+								<Route path="/table/high" component={DetailReport} />
+								<Route path="/ui/gallery" component={GrandFather} />
+								<Route path="/ui/tabs" component={HOCRef} />
 							</Switch>
 						</Admin>
 					} />

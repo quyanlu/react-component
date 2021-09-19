@@ -4,7 +4,7 @@ const menuList = [
 		key: '/home'
 	},
 	{
-		title: 'UI',
+		title: 'REF',
 		key: '/ui',
 		children: [
 			{
@@ -28,11 +28,11 @@ const menuList = [
 				key: '/ui/messages',
 			},
 			{
-				title: 'Tab页签',
+				title: 'HOCRef',
 				key: '/ui/tabs',
 			},
 			{
-				title: '图片画廊',
+				title: '跨层级获取REF',
 				key: '/ui/gallery',
 			},
 			{
