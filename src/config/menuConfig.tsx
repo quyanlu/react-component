@@ -24,8 +24,8 @@ const menuList = [
 				key: '/ui/notification',
 			},
 			{
-				title: '全局Message',
-				key: '/ui/messages',
+				title: 'context高阶用法',
+				key: '/ui/context高阶用法',
 			},
 			{
 				title: 'HOCRef',

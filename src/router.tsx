@@ -9,6 +9,7 @@ import DetailReport from './component/tableComponent/DetailReport';
 import PropsFormPage from './component/porpsForm/formPage';
 import GrandFather from './component/refComponent/跨层级获取';
 import HOCRef from './component/refComponent/高阶组件转发REF';
+import ProviderDemo from './component/context/context高阶用法';
 
 const Router = () => {
 	return (
@@ -25,6 +26,7 @@ const Router = () => {
 								<Route path="/table/high" component={DetailReport} />
 								<Route path="/ui/gallery" component={GrandFather} />
 								<Route path="/ui/tabs" component={HOCRef} />
+								<Route path="/ui/context高阶用法" component={ProviderDemo} />
 							</Switch>
 						</Admin>
 					} />
