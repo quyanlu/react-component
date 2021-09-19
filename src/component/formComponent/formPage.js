@@ -24,7 +24,7 @@ function FormPage() {
 
 	return <div className="form_page" style={{marginTop: '50px', marginLeft: '50px'}}>
 		<Form
-			initialValues={{author: '我不是外星人'}}
+			initialValues={{name: '我不是外星人'}}
 			ref={form}
 		>
 			<FormItem

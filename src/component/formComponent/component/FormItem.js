@@ -44,7 +44,7 @@ function FormItem(props) {
 				if (validateTrigger === trigger) {
 					handleChange(e);
 				}
-				dispatch({type: 'validateFieldValue'});
+				dispatch({type: 'validateFieldValue'}, name);
 			};
 		}
 		mergeChildrenProps.value = dispatch({type: 'getFieldValue'}, name) || '';

@@ -15,8 +15,8 @@ const Select = ({children,...props}) => {
 Select.Option = function(props) {
 	console.log(props, 'props');
 	return <option {...props}
-		className="s"
-		label={props.children}
-	></option>;
+	className="s"
+	label={props.children}
+	/>;
 };
 export default Select;
