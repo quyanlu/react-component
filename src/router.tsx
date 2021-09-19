@@ -6,6 +6,7 @@ import Admin from './Admin';
 import Home from './component/Home';
 import FormPage from './component/formComponent/formPage';
 import DetailReport from './component/tableComponent/DetailReport';
+import PropsFormPage from './component/porpsForm/formPage';
 
 const Router = () => {
 	return (
@@ -18,6 +19,7 @@ const Router = () => {
 							<Switch>
 								<Route path="/home" component={Home}/>
 								<Route path="/form/component" component={FormPage}/>
+								<Route path="/form/reg" component={PropsFormPage}/>
 								<Route path="/table/high" component={DetailReport}/>
 							</Switch>
 						</Admin>
