@@ -10,6 +10,7 @@ import PropsFormPage from './component/porpsForm/formPage';
 import GrandFather from './component/refComponent/跨层级获取';
 import HOCRef from './component/refComponent/高阶组件转发REF';
 import ProviderDemo from './component/context/context高阶用法';
+import ScrollView from './component/srcollView/ScrollView';
 
 const Router = () => {
 	return (
@@ -27,6 +28,7 @@ const Router = () => {
 								<Route path="/ui/gallery" component={GrandFather} />
 								<Route path="/ui/tabs" component={HOCRef} />
 								<Route path="/ui/context高阶用法" component={ProviderDemo} />
+								<Route path="/scrollView" component={ScrollView} />
 							</Switch>
 						</Admin>
 					} />

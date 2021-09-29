@@ -74,8 +74,8 @@ const menuList = [
 		]
 	},
 	{
-		title: '富文本',
-		key: '/rich'
+		title: '滚动加载',
+		key: '/scrollView'
 	},
 	{
 		title: '城市管理',
