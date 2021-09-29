@@ -3,7 +3,6 @@ import App from './App';
 import React from 'react';
 import Login from './component/login/Login';
 import Admin from './Admin';
-import Home from './component/Home';
 import FormPage from './component/formComponent/formPage';
 import DetailReport from './component/tableComponent/DetailReport';
 import PropsFormPage from './component/porpsForm/formPage';
@@ -11,6 +10,7 @@ import GrandFather from './component/refComponent/跨层级获取';
 import HOCRef from './component/refComponent/高阶组件转发REF';
 import ProviderDemo from './component/context/context高阶用法';
 import ScrollView from './component/srcollView/ScrollView';
+import Home from './component/myForm/Home';
 
 const Router = () => {
 	return (
