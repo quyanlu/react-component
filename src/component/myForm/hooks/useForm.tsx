@@ -47,15 +47,15 @@ class FormStore {
 		this.penddingValidateQueue = [];
 		this.defaultFormValue = defaultValue;
 	}
-
+	/* 提供操作form的方法 */
 	getForm() {
-		return formInstanceApi.reduce((map, item) => {
+		return formInstanceApi.reduce((map: any, item: any) => {
 			// @ts-ignore
 			map[item] = this[item].bind(this);
 			return map;
 		}, {});
 	}
-
+	/* 创建一个验证模块 */
 	static createValidate(validate: any) {
 		const {value, rules, required, message} = validate;
 
@@ -67,11 +67,11 @@ class FormStore {
 			status: 'pendding',
 		};
 	}
-
+	/* 处理回调函数 */
 	setCallback(callback: Function) {
 		if (callback) this.callback = callback;
 	}
-
+	/* 触发事件 */
 	dispatch(action: any, ...arg: any[]) {
 		if (!action && typeof action !== 'object') return null;
 		const {type} = action;
@@ -85,7 +85,7 @@ class FormStore {
 			}
 		}
 	}
-
+	/* 注册表单单元项 */
 	registerValidateFields(name: string | number, control: any, model: { value: any; }) {
 		if (this.defaultFormValue[name]) model.value = this.defaultFormValue[name];
 		const validate = FormStore.createValidate(model);
@@ -94,28 +94,28 @@ class FormStore {
 		// @ts-ignore
 		this.control[name] = control;
 	}
-
+	/* 卸载注册表单单元项 */
 	unRegisterValidate(name: string | number) {
 		// @ts-ignore
 		delete this.model[name];
 		// @ts-ignore
 		delete this.control[name];
 	}
-
+	/* 重置表单 */
 	resetFields() {
 		Object.keys(this.model).forEach(modelName => {
 			// @ts-ignore
 			this.setValueClearStatus(this.model[modelName], modelName, null);
 		});
 	}
-
+	/* 设置一组字段状态	  */
 	setFields(object:any) {
 		if (typeof object != 'object') return;
 		Object.keys(object).forEach(modelName => {
 			this.setFieldsValue(modelName, object[modelName]);
 		});
 	}
-
+	/* 设置表单值 */
 	setFieldsValue(name: string, modelValue: { message: any; rule: any; value: any; }) {
 		// @ts-ignore
 		const model = this.model[name];
@@ -131,19 +131,19 @@ class FormStore {
 			this.setValueClearStatus(model, name, modelValue);
 		}
 	}
-
+	/* 复制并清空状态 */
 	setValueClearStatus(model: { value: any; status: string; }, name: string, value: null) {
 		model.value = value;
 		model.status = 'pendding';
 		this.notifyChange(name);
 	}
-
+	/* 通知对应FormItem更新 */
 	notifyChange(name: string) {
 		// @ts-ignore
 		const controller = this.control[name];
 		if (controller) controller?.changeValue();
 	}
-
+	/* 获取表单数据层的值 */
 	getFieldsValue() {
 		const formData = {};
 		Object.keys(this.model).forEach(modelName => {
@@ -152,20 +152,20 @@ class FormStore {
 		});
 		return formData;
 	}
-
+	/* 获取表单模型 */
 	getFieldModel(name: string | number) {
 		// @ts-ignore
 		const model = this.model[name];
 		return model ? model : {};
 	}
-
+	/* 获取对应字段名的值 */
 	getFieldValue(name: string | number) {
 		// @ts-ignore
 		const model = this.model[name];
 		if (!model && this.defaultFormValue[name]) return this.defaultFormValue[name];
 		return model ? model.value : null;
 	}
-
+	/* 单一表单单元项验证 */
 	validateFieldValue(name: string, forceUpdate = false) {
 		// @ts-ignore
 		const model = this.model[name];
@@ -196,7 +196,7 @@ class FormStore {
 		this.scheduleValidate();
 		return status;
 	}
-
+	/* 批量调度验证更新任务 */
 	scheduleValidate() {
 		if (this.isSchedule) return;
 		this.isSchedule = true;
@@ -210,7 +210,7 @@ class FormStore {
 			});
 		});
 	}
-
+	/* 表单整体验证 */
 	validateFields(callback: { (res: any): void; (arg0: boolean): void; }) {
 		let status = true;
 		Object.keys(this.model).forEach(modelName => {
@@ -219,7 +219,7 @@ class FormStore {
 		});
 		callback(status);
 	}
-
+	/* 提交表单 */
 	submit(cb: (arg0: any) => any) {
 		this.validateFields(res => {
 			const {onFinish, onFinishFailed} = this.callback;
