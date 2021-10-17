@@ -22,7 +22,7 @@ function FormPage() {
 		console.log(value);
 	};
 
-	return <div className="form_page" style={{marginTop: '50px', marginLeft: '50px'}}>
+	return <div className="form_page_one" style={{marginTop: '50px', marginLeft: '50px'}}>
 		<Form
 			initialValues={{name: '我不是外星人'}}
 			ref={form}

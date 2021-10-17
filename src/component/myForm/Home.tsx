@@ -230,9 +230,6 @@ const RadioList = (props: {form?: any; clearData?: any;}) => {
 		obj['quesradios'] = val;
 		props.form.current.setFields(obj);
 	};
-	const handleTextareaCheck = (val: any) => {
-		console.log(val);
-	};
 	return (
 		<>
 			<p>
